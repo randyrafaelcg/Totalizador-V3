@@ -1,15 +1,60 @@
 <html>
-  <body>
-    <h1>Sumador</h1>
-    <form id="sumar-form">
-      <label for="first-number">First Number:</label>
-      <input type="number" id="first-number" />
-      <label for="second-number">Second Number:</label>
-      <input type="number" id="second-number" />
-      <input type="submit" value="Sumar" />
-    </form>
-    <div id="resultado-div"></div>
 
-    <script type="module" src="./src/index.js"></script>
-  </body>
+<head>
+  <title>Título</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header><h1><p style="text-align:center">Bienvenido al totalizador</p></h1></header>
+  <center><h3 id="HoraActual"></h3>
+  <script type="text/javascript">
+    showTime();
+    function showTime() {
+      myDate = new Date();
+      hours = myDate.getHours();
+      minutes = myDate.getMinutes();
+      seconds = myDate.getSeconds();
+      if (hours < 10) hours = 0 + hours;
+
+      if (minutes < 10) minutes = "0" + minutes;
+
+      if (seconds < 10) seconds = "0" + seconds;
+
+      $("#HoraActual").text("Hora actual "+hours + ":" + minutes);
+      setTimeout("showTime()", 1000);
+    }
+  </script>
+
+  <div id="Totalizador">
+    <h2>TOTALIZADOR</h2>
+    <form id="totalizador-form">
+      <label for="cantidad-input">Cantidad:</label><br />
+      <input type="number" id="cantidad-input" /><br />
+      <label for="precio-input">Precio:</label><br />
+      <input type="number" id="precio-input" /><br />
+      <div>
+      <br>
+      <label for="state-input">Estado</label>
+      <select id="state-input">
+          <option value="UT">UT</option>
+          <option value="NV">NV</option>
+          <option value="TX">TX</option>
+          <option value="AL">AL</option>
+          <option value="CA">CA</option>
+        </select>
+      </div> 
+      <br>
+      <input type="submit" value="Calcular" />
+      
+    </form>
+    <h3>Total: <p id="total"> </p></h3>
+    <h3>Descuento: <p id="descuento"></p></h3>
+    <h3>Total Con Impuesto: <p id="totalConImpuesto"> </p></h3>
+  </div>
+</center>
+  <script src="/src/index.js"></script>
+</body>
+
 </html>

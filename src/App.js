@@ -1,5 +1,5 @@
-function sumar(a, b) {
-  return a + b;
+function CalcularTotal(cantidad, precio, estado) {
+  return cantidad*precio;
 }
 
-export default sumar;
+export default CalcularTotal;

@@ -1,13 +1,13 @@
-import sumar from "./App.js";
+import CalcularTotal from "./App.js";
 
-describe("Sumar", () => {
-  it("deberia sumar dos numeros", () => {
-    expect(sumar(3, 2)).toEqual(5);
+describe("CalcularTotal", () => {
+  it("deberia devolver el total de cantidad * precio", () => {
+    expect(CalcularTotal(3, 2)).toEqual(6);
   });
 });
 
-describe("Sumar", () => {
-  it("deberia sumar otros dos numeros", () => {
-    expect(sumar(3, 3)).toEqual(6);
+describe("CalcularTotal", () => {
+  it("deberia devolver el total de cantidad * precio de 3*3", () => {
+    expect(CalcularTotal(3, 3, 0)).toEqual(9);
   });
 });
