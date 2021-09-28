@@ -1,4 +1,4 @@
-import sumar from "./App";
+import CalcularTotal from "./App";
 
 /*const first = document.querySelector("#first-number");
 const second = document.querySelector("#second-number");
